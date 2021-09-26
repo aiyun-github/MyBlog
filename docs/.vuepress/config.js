@@ -1,4 +1,5 @@
 const moment = require('moment');
+moment.locale("zh-cn");
 module.exports = {
     title: "我的博客",
     description: "我的博客我的博客",
@@ -11,8 +12,8 @@ module.exports = {
         [
             '@vuepress/last-updated',
             {
-                transformer: (timestamp, lang) => {
-                    moment.locale(lang)
+                transformer: (timestamp) => {
+
                     return moment(timestamp).format("LLLL")
                 }
             }
